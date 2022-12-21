@@ -3,7 +3,7 @@
 
 #include "CodeTest.h"
 
-#pragma warning (disabe: 4458) //c4456 경고끄기
+//#pragma warning (disabe: 4458) //c4456 경고끄기
 // Sets default values
 ACodeTest::ACodeTest()
 {
@@ -40,6 +40,32 @@ void ACodeTest::BeginPlay()
 		int32 mult = 7 * i;
 		UE_LOG(LogTemp, Warning, TEXT("7 * %d = %d\n"), i, mult);
 	}*/
+	
+
+	/*distances.Add(TEXT("Seoul"), 250.5f);
+	distances.Add(TEXT("Incheon"), 450.5f);
+	distances.Add(TEXT("SungNam"), 135.5f);
+
+	FString myKey = TEXT("Incheon");
+	UE_LOG(LogTemp, Warning, TEXT("%s : %f"), *myKey, distances[myKey]);*/
+
+	/*for (auto dist : distances)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%s - %f"), *dist.Key, dist.Value);
+	}*/
+
+	//ages = { 3, 4, 5 };
+	
+	//for (int32 i = 0; i < ages.Num(); i++)
+	//{
+	//	UE_LOG(LogTemp, Warning, TEXT("%d"), ages[i]);
+	
+	//if (pointerTest != nullptr)
+	//{
+	//	*(pointerTest->myAge) = 15;
+	//}
+		//pointerTest->realAge = 15;
+	
 }
 
 
