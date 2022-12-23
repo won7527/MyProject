@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+//#Include "InputActionValue.h"
 #include "PlayerFlight.generated.h"
 
 UCLASS()
@@ -38,10 +39,35 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerSettings)
 	TSubclassOf<class ABullet> bulletFactory;
 
+	UPROPERTY(EditDefaultsOnly, Category = PlayerSettings)
+	class UInputAction* ia_horizontal;
+
+	UPROPERTY(EditDefaultsOnly, Category = PlayerSettings)
+	class UInputAction* ia_vertical;
+
+	UPROPERTY(EditDefaultsOnly, Category = PlayerSettings)
+	class UInputAction* ia_fire;
+
+	UPROPERTY(EditDefaultsOnly, Category = PlayerSettings)
+	class UInputMappingContext* imc_myMapping;
+
 private:
-	void Horizontal(float value);
-	void Vertical(float value);
+	//UFUNCTION(BlueprintCallable)
+	//void Horizontal(float value);
+
+	UFUNCTION(BlueprintCallable)
+	void Horizontal(const FInputActionValue& value);
+
+	UFUNCTION(BlueprintCallable)
+	void Vertical(const FInputActionValue& value);
+
+	UFUNCTION(BlueprintCallable)
 	void FireBullet();
+
+	//UFUNCTION(BlueprintCallable)
+	//void Vertical(float value);
+	//UFUNCTION(BlueprintCallable)
+	//void FireBullet();
 
 	float h;
 	float v;
